@@ -59,8 +59,8 @@ for index, row in df.iterrows():
     df.at[index, 'sentiment'] = response.result
 st.title("Analisis Sentiment Berhasil!")
 st.dataframe(df, use_container_width=True)
-st.markdown("### Download CSV")
-    st.download_button(
+st.sidebar.markdown("### Download CSV")
+    st.sidebar.download_button(
         label="Download CSV",
         data=df.to_csv(index=False).encode("utf-8"),
         file_name='downloaded_data.csv',

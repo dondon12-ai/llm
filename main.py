@@ -4,7 +4,7 @@ import langchain
 from langchain.llms import GooglePalm
 from langchain_experimental.agents.agent_toolkits import create_csv_agent
 from langchain.agents.agent_types import AgentType
-import api
+
 st.sidebar.title("Upload CSV File")
 
 file = st.sidebar.file_uploader("Choose a file")

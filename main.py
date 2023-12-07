@@ -11,7 +11,7 @@ import api
 
 palm.configure(api_key='AIzaSyD1hj2THn19J8gkaBFaTeOriokbD6e_oYU')
 st.sidebar.title("Upload CSV File")
-
+st.sidebar.markdown('catatan : hanya berisi 1 atribut teks')
 file = st.sidebar.file_uploader("Choose a file")
 if file is not None:
     csv_file = file
@@ -57,5 +57,11 @@ for index, row in df.iterrows():
     prompt = f"Tell me whether the following sentence's sentiment is positive or negative or neutral: {row['text']}"
     response = palm.generate_text(**defaults, prompt=prompt)
     df.at[index, 'sentiment'] = response.result
-
+st.title("Analisis Sentiment Berhasil!")
 st.dataframe(df, use_container_width=True)
+st.markdown("### Download CSV")
+    st.download_button(
+        label="Download CSV",
+        data=df.to_csv(index=False).encode("utf-8"),
+        file_name='downloaded_data.csv',
+        key='download_button'

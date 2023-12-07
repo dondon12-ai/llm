@@ -18,7 +18,8 @@ if file is not None:
 else:
     csv_file = None
 
-df = pd.read_csv(csv_file)
+df = pd.read_csv(file)
+
 defaults = {
   'model': 'models/text-bison-001',
   'temperature': 0.5,

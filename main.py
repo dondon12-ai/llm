@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1ARGwSBP-U4gD0a2yoMAF3Dl4FIt1LcCw
 """
 
+pip install streamlit
 
 import streamlit as st
 import langchain

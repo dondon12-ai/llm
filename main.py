@@ -58,23 +58,4 @@ for index, row in df.iterrows():
     response = palm.generate_text(**defaults, prompt=prompt)
     df.at[index, 'sentiment'] = response.result
 
-def generate_response(question, df):
-    """Generates a response to a question using the CSV agent."""
-    agent = create_csv_agent(
-        GooglePalm(temperature=0.5, google_api_key=api.api_key),
-        df,
-        agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-    )
-    response = agent.run(question)
-    return response
-
-# Main area for input and display
-st.title("Sentiment Analysis Success")
-question = st.text_input("Enter your question:")
-
-if question:
-    response = generate_response(question, df)
-    st.write("Response:")
-    st.info(response)
-else:
-    st.write("Please enter a question to get a response.")
+st.dataframe(df, use_container_width=True)

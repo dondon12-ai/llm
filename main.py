@@ -1,6 +1,3 @@
-
-install streamlit
-
 import streamlit as st
 import langchain
 from langchain.llms import GooglePalm

@@ -69,7 +69,7 @@ def generate_response(question, df):
     return response
 
 # Main area for input and display
-st.title("Ask me anything about your data!")
+st.title("Sentiment Analysis Success")
 question = st.text_input("Enter your question:")
 
 if question:

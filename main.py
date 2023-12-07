@@ -5,6 +5,7 @@ from langchain.llms import GooglePalm
 from langchain_experimental.agents.agent_toolkits import create_csv_agent
 from langchain.agents.agent_types import AgentType
 import google.generativeai as palm
+import pandas as pd
 import api
 
 palm.configure(api_key='AIzaSyD1hj2THn19J8gkaBFaTeOriokbD6e_oYU')
